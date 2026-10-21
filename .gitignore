@@ -23,6 +23,10 @@ data/input/airshow.mp4
 *.mov
 *.wav
 
+# Extracted video frame dumps (reproducible via scripts/auto_annotate.py)
+data/custom_dataset/**/images/
+data/label_frames/
+
 # Run logs & temporary artifacts
 *.log
 runs/

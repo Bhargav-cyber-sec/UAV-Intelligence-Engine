@@ -110,13 +110,13 @@ def train_visdrone(
         hsv_v=0.4,
         degrees=45.0,       # strong rotation: aerial view has no fixed "up" (UAV can bank/yaw freely)
         translate=0.1,
-        scale=0.9,          # aggressive scale jitter: simulates varying altitude (100m vs 300m AGL)
+        scale=0.5,          # scale jitter: simulates varying altitude — kept at 0.5 (safe with multi_scale off)
         flipud=0.0,         # no vertical flip (sky must stay up in aerial footage)
         fliplr=0.5,
         mosaic=1.0,         # mosaic: 4 images tiled — greatly helps small object recall
         close_mosaic=10,    # disable mosaic in last 10 epochs for stable convergence
         copy_paste=0.5,     # raised from 0.3 → more small object pasting — critical for pedestrian/bicycle recall
-        multi_scale=True,   # random resize each batch 50%–150% — trains robust multi-altitude detection
+        # multi_scale disabled — causes BatchNorm single-value error at imgsz=1280 when tile shrinks to 32px
         # ── Optimizer ─────────────────────────────────────────────────────────
         optimizer="AdamW",
         lr0=0.001,
