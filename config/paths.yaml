@@ -5,11 +5,11 @@ data:
   output_dir: data/output      # per-mission evidence packages (gitignored)
 
 models:
-  # ── Active model (swap this line to switch between models) ──────────────
-  yolo_weights: models/yolo/yolo11s_visdrone.pt     # VisDrone fine-tuned ✅ (trained 2026-10-20)
-  # yolo_weights: models/yolo/yolo11n.pt            # ← rollback to base COCO model if needed
-  # ────────────────────────────────────────────────────────────────────────
-  yolo_visdrone_weights: models/yolo/yolo11s_visdrone.pt  # active fine-tuned model
+  # ── Active model (Phase 1 Baseline COCO Branch) ──────────────────────────────
+  # Base COCO weights trained on ground-level imagery (80 classes)
+  # NOTE: Demonstrates domain mismatch (hallucinates aerial cars as trains, zero overhead pedestrians)
+  yolo_weights: models/yolo/yolo11s.pt
+  yolo_visdrone_weights: models/yolo/yolo11s_visdrone.pt
   whisper_model_dir: models/whisper/faster-whisper-small-int8
   ollama_text_model: qwen3:4b-q4_K_M
   ollama_vl_model: qwen2.5-vl:3b-q4_K_M   # optional, keyframe captioning only
