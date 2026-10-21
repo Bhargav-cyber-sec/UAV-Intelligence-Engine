@@ -5,11 +5,11 @@ data:
   output_dir: data/output      # per-mission evidence packages (gitignored)
 
 models:
-  # ── Active model (swap this line to switch between models) ──────────────
-  yolo_weights: models/yolo/yolo11s_visdrone.pt     # VisDrone fine-tuned ✅ (trained 2026-10-20)
-  # yolo_weights: models/yolo/yolo11n.pt            # ← rollback to base COCO model if needed
-  # ────────────────────────────────────────────────────────────────────────
-  yolo_visdrone_weights: models/yolo/yolo11s_visdrone.pt  # active fine-tuned model
+  # ── Active model (Phase 2.1 Custom Video Pseudo-Label Branch) ────────────────
+  # Trained on 163 frames of v268.mp4 (21 epochs, patience=20)
+  # NOTE: Retains car accuracy (mAP50 0.783) with tight boxes, but regresses on pedestrians
+  yolo_weights: models/yolo/yolo11s_v268_finetuned.pt
+  yolo_visdrone_weights: models/yolo/yolo11s_visdrone.pt  # Phase 2 general aerial model (stable fallback)
   whisper_model_dir: models/whisper/faster-whisper-small-int8
   ollama_text_model: qwen3:4b-q4_K_M
   ollama_vl_model: qwen2.5-vl:3b-q4_K_M   # optional, keyframe captioning only
