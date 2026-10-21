@@ -1,0 +1,136 @@
+{
+  "video": {
+    "file": "v268.mp4",
+    "resolution": "3840x2160",
+    "frames": 978,
+    "fps": 30.0,
+    "duration_s": 32.6
+  },
+  "model": {
+    "name": "yolo11s_visdrone.pt",
+    "architecture": "YOLOv11s (VisDrone Aerial Fine-Tuned)",
+    "classes": {
+      "0": "pedestrian",
+      "1": "people",
+      "2": "bicycle",
+      "3": "car",
+      "4": "van",
+      "5": "truck",
+      "6": "tricycle",
+      "7": "awning-tricycle",
+      "8": "bus",
+      "9": "motor"
+    }
+  },
+  "benchmark_ground_truth_metrics": {
+    "overall": {
+      "precision": 0.514,
+      "recall": 0.38,
+      "mAP50": 0.387,
+      "mAP50_95": 0.22
+    },
+    "per_class": {
+      "car": {
+        "precision": 0.687,
+        "recall": 0.787,
+        "mAP50": 0.783,
+        "mAP50_95": 0.529
+      },
+      "bus": {
+        "precision": 0.736,
+        "recall": 0.466,
+        "mAP50": 0.532,
+        "mAP50_95": 0.367
+      },
+      "van": {
+        "precision": 0.528,
+        "recall": 0.433,
+        "mAP50": 0.444,
+        "mAP50_95": 0.301
+      },
+      "motor": {
+        "precision": 0.515,
+        "recall": 0.448,
+        "mAP50": 0.439,
+        "mAP50_95": 0.185
+      },
+      "pedestrian": {
+        "precision": 0.546,
+        "recall": 0.408,
+        "mAP50": 0.42,
+        "mAP50_95": 0.18
+      },
+      "truck": {
+        "precision": 0.541,
+        "recall": 0.368,
+        "mAP50": 0.386,
+        "mAP50_95": 0.246
+      }
+    }
+  },
+  "video_detection_metrics": {
+    "total_detections": 4935,
+    "unique_tracks": 160,
+    "avg_confidence": 0.571,
+    "avg_track_duration_s": 1.03,
+    "detections_per_frame": 5.05,
+    "class_breakdown": {
+      "car": {
+        "detections": 3825,
+        "unique_tracks": 104,
+        "avg_confidence": 0.586,
+        "benchmark_precision": 0.687,
+        "benchmark_recall": 0.787,
+        "benchmark_mAP50": 0.783
+      },
+      "van": {
+        "detections": 817,
+        "unique_tracks": 70,
+        "avg_confidence": 0.572,
+        "benchmark_precision": 0.528,
+        "benchmark_recall": 0.433,
+        "benchmark_mAP50": 0.444
+      },
+      "pedestrian": {
+        "detections": 138,
+        "unique_tracks": 15,
+        "avg_confidence": 0.297,
+        "benchmark_precision": 0.546,
+        "benchmark_recall": 0.408,
+        "benchmark_mAP50": 0.42
+      },
+      "truck": {
+        "detections": 74,
+        "unique_tracks": 20,
+        "avg_confidence": 0.51,
+        "benchmark_precision": 0.541,
+        "benchmark_recall": 0.368,
+        "benchmark_mAP50": 0.386
+      },
+      "people": {
+        "detections": 36,
+        "unique_tracks": 2,
+        "avg_confidence": 0.337,
+        "benchmark_precision": "N/A",
+        "benchmark_recall": "N/A",
+        "benchmark_mAP50": "N/A"
+      },
+      "bus": {
+        "detections": 29,
+        "unique_tracks": 13,
+        "avg_confidence": 0.432,
+        "benchmark_precision": 0.736,
+        "benchmark_recall": 0.466,
+        "benchmark_mAP50": 0.532
+      },
+      "tricycle": {
+        "detections": 16,
+        "unique_tracks": 3,
+        "avg_confidence": 0.251,
+        "benchmark_precision": "N/A",
+        "benchmark_recall": "N/A",
+        "benchmark_mAP50": "N/A"
+      }
+    }
+  }
+}

@@ -1,0 +1,278 @@
+{
+  "summary": {
+    "frames": 12,
+    "unique_tracks": 7,
+    "total_detections": 22,
+    "class_counts": {
+      "car": 15,
+      "van": 5,
+      "truck": 2
+    }
+  },
+  "detections": [
+    {
+      "frame": 0,
+      "track_id": 1,
+      "class": "car",
+      "conf": 0.792,
+      "bbox": [
+        2085,
+        908,
+        2149,
+        961
+      ]
+    },
+    {
+      "frame": 0,
+      "track_id": 2,
+      "class": "van",
+      "conf": 0.555,
+      "bbox": [
+        2097,
+        831,
+        2146,
+        882
+      ]
+    },
+    {
+      "frame": 0,
+      "track_id": 3,
+      "class": "car",
+      "conf": 0.497,
+      "bbox": [
+        2260,
+        774,
+        2305,
+        796
+      ]
+    },
+    {
+      "frame": 160,
+      "track_id": 4,
+      "class": "truck",
+      "conf": 0.508,
+      "bbox": [
+        2092,
+        1338,
+        2326,
+        1601
+      ]
+    },
+    {
+      "frame": 240,
+      "track_id": 4,
+      "class": "car",
+      "conf": 0.544,
+      "bbox": [
+        2097,
+        1366,
+        2350,
+        1650
+      ]
+    },
+    {
+      "frame": 240,
+      "track_id": 9,
+      "class": "car",
+      "conf": 0.883,
+      "bbox": [
+        2150,
+        1738,
+        2450,
+        2156
+      ]
+    },
+    {
+      "frame": 320,
+      "track_id": 4,
+      "class": "car",
+      "conf": 0.645,
+      "bbox": [
+        2090,
+        1381,
+        2352,
+        1677
+      ]
+    },
+    {
+      "frame": 320,
+      "track_id": 9,
+      "class": "car",
+      "conf": 0.865,
+      "bbox": [
+        2147,
+        1749,
+        2440,
+        2158
+      ]
+    },
+    {
+      "frame": 320,
+      "track_id": 12,
+      "class": "van",
+      "conf": 0.432,
+      "bbox": [
+        2114,
+        1382,
+        2327,
+        1680
+      ]
+    },
+    {
+      "frame": 400,
+      "track_id": 4,
+      "class": "car",
+      "conf": 0.423,
+      "bbox": [
+        2079,
+        1385,
+        2341,
+        1685
+      ]
+    },
+    {
+      "frame": 400,
+      "track_id": 9,
+      "class": "car",
+      "conf": 0.874,
+      "bbox": [
+        2133,
+        1753,
+        2424,
+        2158
+      ]
+    },
+    {
+      "frame": 400,
+      "track_id": 12,
+      "class": "van",
+      "conf": 0.446,
+      "bbox": [
+        2103,
+        1383,
+        2314,
+        1679
+      ]
+    },
+    {
+      "frame": 480,
+      "track_id": 4,
+      "class": "van",
+      "conf": 0.434,
+      "bbox": [
+        2083,
+        1406,
+        2347,
+        1710
+      ]
+    },
+    {
+      "frame": 480,
+      "track_id": 9,
+      "class": "car",
+      "conf": 0.873,
+      "bbox": [
+        2145,
+        1779,
+        2420,
+        2159
+      ]
+    },
+    {
+      "frame": 480,
+      "track_id": 12,
+      "class": "car",
+      "conf": 0.451,
+      "bbox": [
+        2106,
+        1404,
+        2321,
+        1705
+      ]
+    },
+    {
+      "frame": 560,
+      "track_id": 4,
+      "class": "truck",
+      "conf": 0.173,
+      "bbox": [
+        2081,
+        1417,
+        2342,
+        1722
+      ]
+    },
+    {
+      "frame": 560,
+      "track_id": 9,
+      "class": "car",
+      "conf": 0.875,
+      "bbox": [
+        2130,
+        1749,
+        2426,
+        2160
+      ]
+    },
+    {
+      "frame": 560,
+      "track_id": 12,
+      "class": "van",
+      "conf": 0.466,
+      "bbox": [
+        2103,
+        1416,
+        2318,
+        1718
+      ]
+    },
+    {
+      "frame": 640,
+      "track_id": 9,
+      "class": "car",
+      "conf": 0.871,
+      "bbox": [
+        2140,
+        1783,
+        2416,
+        2160
+      ]
+    },
+    {
+      "frame": 640,
+      "track_id": 12,
+      "class": "car",
+      "conf": 0.782,
+      "bbox": [
+        2100,
+        1426,
+        2320,
+        1736
+      ]
+    },
+    {
+      "frame": 720,
+      "track_id": 22,
+      "class": "car",
+      "conf": 0.493,
+      "bbox": [
+        2512,
+        919,
+        2603,
+        977
+      ]
+    },
+    {
+      "frame": 880,
+      "track_id": 12,
+      "class": "car",
+      "conf": 0.886,
+      "bbox": [
+        2082,
+        1505,
+        2263,
+        1759
+      ]
+    }
+  ]
+}
