@@ -1,0 +1,493 @@
+{
+  "summary": {
+    "frames": 12,
+    "unique_tracks": 5,
+    "total_detections": 40,
+    "class_counts": {
+      "airplane": 36,
+      "bird": 4
+    }
+  },
+  "detections": [
+    {
+      "frame": 0,
+      "track_id": 1,
+      "class": "airplane",
+      "conf": 0.916,
+      "bbox": [
+        942,
+        133,
+        1265,
+        278
+      ]
+    },
+    {
+      "frame": 0,
+      "track_id": 2,
+      "class": "airplane",
+      "conf": 0.642,
+      "bbox": [
+        751,
+        443,
+        1013,
+        536
+      ]
+    },
+    {
+      "frame": 0,
+      "track_id": 3,
+      "class": "airplane",
+      "conf": 0.589,
+      "bbox": [
+        707,
+        600,
+        938,
+        674
+      ]
+    },
+    {
+      "frame": 0,
+      "track_id": 4,
+      "class": "bird",
+      "conf": 0.289,
+      "bbox": [
+        625,
+        697,
+        824,
+        767
+      ]
+    },
+    {
+      "frame": 6,
+      "track_id": 1,
+      "class": "airplane",
+      "conf": 0.908,
+      "bbox": [
+        942,
+        127,
+        1263,
+        272
+      ]
+    },
+    {
+      "frame": 6,
+      "track_id": 2,
+      "class": "airplane",
+      "conf": 0.822,
+      "bbox": [
+        752,
+        435,
+        1012,
+        528
+      ]
+    },
+    {
+      "frame": 6,
+      "track_id": 3,
+      "class": "airplane",
+      "conf": 0.447,
+      "bbox": [
+        709,
+        593,
+        939,
+        667
+      ]
+    },
+    {
+      "frame": 6,
+      "track_id": 4,
+      "class": "bird",
+      "conf": 0.274,
+      "bbox": [
+        631,
+        691,
+        817,
+        757
+      ]
+    },
+    {
+      "frame": 12,
+      "track_id": 1,
+      "class": "airplane",
+      "conf": 0.916,
+      "bbox": [
+        944,
+        122,
+        1266,
+        267
+      ]
+    },
+    {
+      "frame": 12,
+      "track_id": 2,
+      "class": "airplane",
+      "conf": 0.721,
+      "bbox": [
+        755,
+        428,
+        1011,
+        519
+      ]
+    },
+    {
+      "frame": 12,
+      "track_id": 4,
+      "class": "bird",
+      "conf": 0.347,
+      "bbox": [
+        629,
+        683,
+        818,
+        749
+      ]
+    },
+    {
+      "frame": 18,
+      "track_id": 1,
+      "class": "airplane",
+      "conf": 0.921,
+      "bbox": [
+        945,
+        116,
+        1267,
+        261
+      ]
+    },
+    {
+      "frame": 18,
+      "track_id": 2,
+      "class": "airplane",
+      "conf": 0.786,
+      "bbox": [
+        756,
+        418,
+        1013,
+        510
+      ]
+    },
+    {
+      "frame": 18,
+      "track_id": 3,
+      "class": "airplane",
+      "conf": 0.727,
+      "bbox": [
+        712,
+        577,
+        939,
+        651
+      ]
+    },
+    {
+      "frame": 24,
+      "track_id": 1,
+      "class": "airplane",
+      "conf": 0.922,
+      "bbox": [
+        947,
+        110,
+        1267,
+        254
+      ]
+    },
+    {
+      "frame": 24,
+      "track_id": 2,
+      "class": "airplane",
+      "conf": 0.762,
+      "bbox": [
+        759,
+        410,
+        1013,
+        501
+      ]
+    },
+    {
+      "frame": 24,
+      "track_id": 3,
+      "class": "airplane",
+      "conf": 0.662,
+      "bbox": [
+        711,
+        569,
+        937,
+        642
+      ]
+    },
+    {
+      "frame": 24,
+      "track_id": 4,
+      "class": "airplane",
+      "conf": 0.387,
+      "bbox": [
+        630,
+        666,
+        817,
+        731
+      ]
+    },
+    {
+      "frame": 30,
+      "track_id": 1,
+      "class": "airplane",
+      "conf": 0.919,
+      "bbox": [
+        951,
+        105,
+        1267,
+        247
+      ]
+    },
+    {
+      "frame": 30,
+      "track_id": 2,
+      "class": "airplane",
+      "conf": 0.551,
+      "bbox": [
+        763,
+        404,
+        1014,
+        493
+      ]
+    },
+    {
+      "frame": 30,
+      "track_id": 3,
+      "class": "airplane",
+      "conf": 0.633,
+      "bbox": [
+        715,
+        564,
+        938,
+        636
+      ]
+    },
+    {
+      "frame": 36,
+      "track_id": 1,
+      "class": "airplane",
+      "conf": 0.923,
+      "bbox": [
+        953,
+        101,
+        1268,
+        243
+      ]
+    },
+    {
+      "frame": 36,
+      "track_id": 2,
+      "class": "airplane",
+      "conf": 0.651,
+      "bbox": [
+        781,
+        398,
+        1032,
+        486
+      ]
+    },
+    {
+      "frame": 36,
+      "track_id": 3,
+      "class": "airplane",
+      "conf": 0.715,
+      "bbox": [
+        715,
+        559,
+        939,
+        631
+      ]
+    },
+    {
+      "frame": 36,
+      "track_id": 4,
+      "class": "airplane",
+      "conf": 0.41,
+      "bbox": [
+        629,
+        652,
+        817,
+        718
+      ]
+    },
+    {
+      "frame": 42,
+      "track_id": 1,
+      "class": "airplane",
+      "conf": 0.919,
+      "bbox": [
+        954,
+        99,
+        1270,
+        241
+      ]
+    },
+    {
+      "frame": 42,
+      "track_id": 2,
+      "class": "airplane",
+      "conf": 0.75,
+      "bbox": [
+        775,
+        396,
+        1019,
+        482
+      ]
+    },
+    {
+      "frame": 42,
+      "track_id": 3,
+      "class": "airplane",
+      "conf": 0.808,
+      "bbox": [
+        714,
+        556,
+        938,
+        628
+      ]
+    },
+    {
+      "frame": 42,
+      "track_id": 4,
+      "class": "airplane",
+      "conf": 0.604,
+      "bbox": [
+        630,
+        649,
+        817,
+        715
+      ]
+    },
+    {
+      "frame": 48,
+      "track_id": 1,
+      "class": "airplane",
+      "conf": 0.927,
+      "bbox": [
+        955,
+        99,
+        1269,
+        240
+      ]
+    },
+    {
+      "frame": 48,
+      "track_id": 2,
+      "class": "airplane",
+      "conf": 0.716,
+      "bbox": [
+        775,
+        396,
+        1014,
+        479
+      ]
+    },
+    {
+      "frame": 48,
+      "track_id": 3,
+      "class": "airplane",
+      "conf": 0.741,
+      "bbox": [
+        714,
+        555,
+        938,
+        627
+      ]
+    },
+    {
+      "frame": 48,
+      "track_id": 7,
+      "class": "bird",
+      "conf": 0.342,
+      "bbox": [
+        1052,
+        853,
+        1333,
+        922
+      ]
+    },
+    {
+      "frame": 54,
+      "track_id": 1,
+      "class": "airplane",
+      "conf": 0.931,
+      "bbox": [
+        958,
+        102,
+        1270,
+        241
+      ]
+    },
+    {
+      "frame": 54,
+      "track_id": 2,
+      "class": "airplane",
+      "conf": 0.595,
+      "bbox": [
+        778,
+        398,
+        1014,
+        479
+      ]
+    },
+    {
+      "frame": 54,
+      "track_id": 3,
+      "class": "airplane",
+      "conf": 0.543,
+      "bbox": [
+        719,
+        558,
+        941,
+        629
+      ]
+    },
+    {
+      "frame": 60,
+      "track_id": 1,
+      "class": "airplane",
+      "conf": 0.91,
+      "bbox": [
+        958,
+        105,
+        1268,
+        244
+      ]
+    },
+    {
+      "frame": 60,
+      "track_id": 2,
+      "class": "airplane",
+      "conf": 0.663,
+      "bbox": [
+        777,
+        401,
+        1014,
+        482
+      ]
+    },
+    {
+      "frame": 60,
+      "track_id": 3,
+      "class": "airplane",
+      "conf": 0.763,
+      "bbox": [
+        720,
+        562,
+        938,
+        632
+      ]
+    },
+    {
+      "frame": 60,
+      "track_id": 4,
+      "class": "airplane",
+      "conf": 0.507,
+      "bbox": [
+        633,
+        652,
+        816,
+        716
+      ]
+    }
+  ]
+}

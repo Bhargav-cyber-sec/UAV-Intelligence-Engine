@@ -1,0 +1,34 @@
+# Target: Python 3.14, win_amd64
+# CPU-only — no CUDA toolkit on the facility PC.
+#
+# torch/torchvision still handled separately in build_wheelhouse.bat (CPU index).
+# ultralytics still handled separately (--no-deps), same reasons as before.
+
+# --- Phase 1: foundation ---
+pyyaml>=6.0
+python-dotenv>=1.0
+click>=8.1
+
+# --- Phase 2: media ingestion + YOLO/tracking ---
+opencv-python-headless>=4.9   # ships as cp37-abi3, already 3.14-compatible
+numpy>=2.0                    # CHANGED: torch 2.9+/pandas 2.3+/scipy 1.15+ all need numpy2 on 3.14
+matplotlib>=3.8
+pandas>=2.3.0                 # CHANGED: numpy2 ABI compatibility
+pillow>=11.0                  # CHANGED: 3.13/3.14 wheels only exist from 11.0+
+requests>=2.31
+tqdm>=4.66
+psutil>=6.0                   # CHANGED: safer floor for new-Python wheel availability
+py-cpuinfo>=9.0
+scipy>=1.15.0                 # CHANGED: numpy2 ABI compatibility
+
+# --- Phase 4: audio pipeline ---
+faster-whisper>=1.0
+# ctranslate2 pulled in automatically — confirmed shipping cp314 builds
+
+# --- Phase 6: TTS/PDF/UI ---
+streamlit>=1.40                # bumped as a safer floor; watch pyarrow resolution below
+reportlab>=4.1
+# --- Phase 2: media ingestion + YOLO/tracking ---
+lap>=0.5.12
+# --- Dev/testing only ---
+pytest>=9.0

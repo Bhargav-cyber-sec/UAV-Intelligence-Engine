@@ -1,0 +1,46 @@
+# VisDrone 2019 Object Detection Dataset Configuration
+# This is passed to train_visdrone.py via --data (or used standalone with Ultralytics).
+#
+# Ultralytics will automatically download and convert the VisDrone dataset
+# the first time this config is referenced. No manual download needed.
+#
+# Dataset statistics:
+#   Train : 6,471 images (VisDrone2019-DET-train)
+#   Val   : 548 images   (VisDrone2019-DET-val)
+#   Test  : 1,610 images (VisDrone2019-DET-test-dev)  [no public labels]
+#
+# 10 classes — all aerial drone footage specific:
+#   Ignored class indices (-1 = "ignored regions") are filtered automatically.
+
+# Path root — Ultralytics downloads here by default.
+# Override with an absolute path if you have the dataset already.
+path: ../datasets/VisDrone
+
+train: VisDrone2019-DET-train/images
+val:   VisDrone2019-DET-val/images
+test:  VisDrone2019-DET-test-dev/images
+
+# Number of classes
+nc: 10
+
+# Class names (order must match annotation class IDs)
+names:
+  0: pedestrian        # standing/walking person
+  1: people            # person in any other posture (sitting, riding, etc.)
+  2: bicycle
+  3: car
+  4: van
+  5: truck
+  6: tricycle
+  7: awning-tricycle   # covered three-wheeled vehicle (common in SE/South Asia)
+  8: bus
+  9: motor             # motorcycle / motorbike
+
+# ── Notes ────────────────────────────────────────────────────────────────────
+# • When using the fine-tuned model (yolo11_visdrone.pt) for inference,
+#   classes_of_interest in ontology.yaml should be set to null (detect all 10)
+#   because the model's class IDs are VisDrone-native, NOT COCO.
+#
+# • If you want to restrict to just vehicles, set in ontology.yaml:
+#     classes_of_interest: [2, 3, 4, 5, 6, 7, 8, 9]
+#   (excludes pedestrian=0 and people=1)

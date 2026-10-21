@@ -1,0 +1,94 @@
+# Event ontology — edit thresholds here, not in code.
+# See docs/design_review.md section 1 for rationale.
+
+mission_phases:
+  - takeoff
+  - transit
+  - loiter_observation
+  - engagement_area
+  - rtb
+  - landing
+
+event_types:
+  - id: object_appearance
+    trigger: new_track_id
+    min_persistence_s: 1.5
+
+  - id: object_persistence
+    trigger: track_duration
+    min_persistence_s: 5.0
+
+  - id: object_disappearance
+    trigger: track_ended
+
+  - id: count_change
+    trigger: class_count_delta
+    min_delta: 1
+
+  - id: scene_transition
+    trigger: ssim_drop_or_camera_motion_spike
+
+  - id: speech_event
+    trigger: vad_segment_with_transcript
+
+  - id: mission_phase_change
+    trigger: manual_or_heuristic
+
+# Sampling / inference settings
+sampling:
+  detection_fps: 5          # frames per second
+  yolo_inference_size: 1280 # px — raised from 640; VisDrone model was trained at higher res, more detail
+
+# Detection + tracking (Week 2 — VisDrone upgrade)
+detection:
+  confidence_threshold: 0.15   # lowered for VisDrone model; it is better calibrated than COCO baseline
+  tracker: bytetrack.yaml      # ultralytics built-in ByteTrack
+  track_buffer: 45             # frames a lost track stays alive
+  min_track_frames: 3          # tracks < 3 frames flagged noise=True
+  # VisDrone 10-class set — matches the fine-tuned model's class namespace.
+  # Remove this block (set to null) if running with the base COCO yolo11n.pt.
+  classes_of_interest: null    # set per-model: VisDrone model uses its own namespace; null = all classes
+  sahi:
+    enabled: true              # ENABLED — UAV footage has small targets; SAHI tiling is critical
+    slice_height: 640
+    slice_width: 640
+    overlap_ratio: 0.25        # 25% overlap for good boundary coverage
+    nms_threshold: 0.45        # cross-tile NMS IoU threshold
+
+# Scoring weights (Phase 4) — hand-tuned starting point, not learned.
+scoring:
+  weights:
+    yolo_relevance: 0.25
+    persistence_norm: 0.2
+    visual_change_norm: 0.15
+    audio_relevance: 0.15
+    mission_phase_weight: 0.15
+    count_change_norm: 0.1
+  candidate_threshold: 0.4
+
+# Highlight generation (Phase 5)
+highlight:
+  pre_context_s: [3, 10]     # min, max — scales with event score
+  post_context_s: [3, 15]
+  merge_gap_s: 2.0
+  min_clip_duration_s: 4.0
+  max_clip_duration_s: 45.0
+  always_include_mission_start_s: 5
+  always_include_mission_end_s: 5
+
+# Track continuity reconciliation (Phase 3-4) — closes the "same object counted
+# as disappear+appear" gap. A dropped track is held as a "ghost" for
+# ghost_window_s; a new track of the same class appearing within that window,
+# inside max_motion_radius_m (approximated from pixel displacement + elapsed
+# time), is relabeled as a continuation under a stable logical_id rather than
+# scored as two separate events.
+track_continuity:
+  ghost_window_s: 2.0          # raised from 1.5s — 2s covers 10 frames at 5fps; enough for a fast turn
+  max_motion_radius_px: 150    # raised from 120px — fast aircraft can travel further between samples
+
+# Motion-compensation quality gate (Phase 4) — closes the featureless-terrain
+# failure mode. If the homography fit has too few inliers, compensation is
+# skipped for that frame pair and visual_change_norm falls back to 0
+# (YOLO/tracking signal only) instead of trusting an unstable warp.
+motion_compensation:
+  min_ransac_inliers: 15
