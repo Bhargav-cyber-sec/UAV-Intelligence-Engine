@@ -5,10 +5,11 @@ data:
   output_dir: data/output      # per-mission evidence packages (gitignored)
 
 models:
-  # ── Active model (swap this line to switch between models) ──────────────
-  yolo_weights: models/yolo/yolo11s_visdrone.pt     # VisDrone fine-tuned ✅ (trained 2026-10-20)
-  # yolo_weights: models/yolo/yolo11n.pt            # ← rollback to base COCO model if needed
-  # ────────────────────────────────────────────────────────────────────────
+  # ── Active model (swap this line to switch between models) ──────────────────
+  yolo_weights: models/yolo/yolo11s_visdrone.pt     # VisDrone fine-tuned [RECOMMENDED] (trained 2026-10-20)
+  # yolo_weights: models/yolo/yolo11s_v268_finetuned.pt  # Phase 2.1 custom video experiment
+  # yolo_weights: models/yolo/yolo11n.pt            # Phase 1 baseline COCO model rollback
+  # ────────────────────────────────────────────────────────────────────────────
   yolo_visdrone_weights: models/yolo/yolo11s_visdrone.pt  # active fine-tuned model
   whisper_model_dir: models/whisper/faster-whisper-small-int8
   ollama_text_model: qwen3:4b-q4_K_M
