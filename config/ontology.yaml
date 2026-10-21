@@ -37,7 +37,7 @@ event_types:
 # Sampling / inference settings
 sampling:
   detection_fps: 5          # frames per second
-  yolo_inference_size: 1280 # px — raised from 640; VisDrone model was trained at higher res, more detail
+  yolo_inference_size: 2048 # px — raised from 1280; closer to native 4K source resolution; improves small-object recall
 
 # Detection + tracking (Week 2 — VisDrone upgrade)
 detection:
@@ -50,9 +50,9 @@ detection:
   classes_of_interest: null    # set per-model: VisDrone model uses its own namespace; null = all classes
   sahi:
     enabled: true              # ENABLED — UAV footage has small targets; SAHI tiling is critical
-    slice_height: 640
-    slice_width: 640
-    overlap_ratio: 0.25        # 25% overlap for good boundary coverage
+    slice_height: 512          # reduced from 640 — smaller tiles = higher effective resolution per tile for tiny objects
+    slice_width: 512
+    overlap_ratio: 0.30        # raised from 0.25 — more overlap prevents boundary-crossing objects from being missed
     nms_threshold: 0.45        # cross-tile NMS IoU threshold
 
 # Scoring weights (Phase 4) — hand-tuned starting point, not learned.

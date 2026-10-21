@@ -108,14 +108,15 @@ def train_visdrone(
         hsv_h=0.015,        # slight hue variation (road colour, vegetation, sky)
         hsv_s=0.7,
         hsv_v=0.4,
-        degrees=10.0,       # small rotations (UAV yaw drift)
+        degrees=45.0,       # strong rotation: aerial view has no fixed "up" (UAV can bank/yaw freely)
         translate=0.1,
-        scale=0.5,          # scale jitter: trains model on objects at different altitudes
+        scale=0.9,          # aggressive scale jitter: simulates varying altitude (100m vs 300m AGL)
         flipud=0.0,         # no vertical flip (sky must stay up in aerial footage)
         fliplr=0.5,
         mosaic=1.0,         # mosaic: 4 images tiled — greatly helps small object recall
         close_mosaic=10,    # disable mosaic in last 10 epochs for stable convergence
-        copy_paste=0.3,     # paste extra small objects into scene — KEY for aerial density
+        copy_paste=0.5,     # raised from 0.3 → more small object pasting — critical for pedestrian/bicycle recall
+        multi_scale=True,   # random resize each batch 50%–150% — trains robust multi-altitude detection
         # ── Optimizer ─────────────────────────────────────────────────────────
         optimizer="AdamW",
         lr0=0.001,
